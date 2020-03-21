@@ -28,20 +28,6 @@ TEST_CASE("Test replacement of lower-case and upper-case")
     CHECK(find(text, "hapPY") == string("Happi"));
     CHECK(find(text, "happY") == string("Happi"));
 }
-TEST_CASE("Test throw exception-wrong word")
-{
-    string text = "Dont worry be happy";
-    bool b = false;
-    try{
-        find(text,"Hippie");
-        b = false;
-    }
-        catch (exception ex) {
-            b = true;
-    }
-    CHECK(b);
-}
-
 TEST_CASE("Test replacement of p and b")
 {
     string text = "xxx happy yyy";
@@ -59,8 +45,21 @@ TEST_CASE("Test replacement of i and y && p and b")
     CHECK(find(text, "hapbi") == string("happy"));
     CHECK(find(text, "habpi") == string("happy"));
 }
-
-
+TEST_CASE("Test throw exception-wrong word")
+{
+    string text = "Dont worry be happy";
+    bool b = false;
+    try
+    {
+        find(text, "Hippie");
+        b = false;
+    }
+    catch (exception ex)
+    {
+        b = true;
+    }
+    CHECK(b);
+}
 TEST_CASE("Test replacement of v and w")
 {
     string text = "viewpoint xxx yyy";
@@ -70,16 +69,18 @@ TEST_CASE("Test replacement of v and w")
     CHECK(find(text, "wievpoint") == string("viewpoint"));
 }
 
-TEST_CASE("Test throw exception-wrong word")///////////////////////////
+TEST_CASE("Test throw exception-wrong word")
 {
-    string text = "";
+    string text = "My point of view";
     bool b = false;
-    try{
-        find(text,"");
+    try
+    {
+        find(text, "viewpoint");
         b = false;
     }
-        catch (exception ex) {
-            b = true;
+    catch (exception ex)
+    {
+        b = true;
     }
     CHECK(b);
 }
@@ -108,8 +109,21 @@ TEST_CASE("Test replacement of lower-case and upper-case")
     CHECK(find(text, "gOogLe") == string("google"));
     CHECK(find(text, "goOGle") == string("google"));
 }
-TEST_CASE("Test throw exception-wrong word")///////////////////////////
-{}
+TEST_CASE("Test throw exception-wrong word")
+{
+    string text = "We love github";
+    bool b = false;
+    try
+    {
+        find(text, "google");
+        b = false;
+    }
+    catch (exception ex)
+    {
+        b = true;
+    }
+    CHECK(b);
+}
 
 TEST_CASE("Test replacement of b and f")
 {
@@ -140,8 +154,21 @@ TEST_CASE("Test replacement of lower-case and upper-case")
     CHECK(find(text, "faCEBOOK") == string("facebook"));
     CHECK(find(text, "fACEBOOK") == string("facebook"));
 }
-TEST_CASE("Test throw exception-wrong word")///////////////////////////
-{}
+TEST_CASE("Test throw exception-wrong word")
+{
+    string text = "I read a book about cpp";
+    bool b = false;
+    try
+    {
+        find(text, "facebook");
+        b = false;
+    }
+    catch (exception ex)
+    {
+        b = true;
+    }
+    CHECK(b);
+}
 
 TEST_CASE("Test replacement of f and p")
 {
@@ -174,8 +201,21 @@ TEST_CASE("Test replacement of lower-case and upper-case")
     CHECK(find(text, "flipflOp") == string("flipflop"));
     CHECK(find(text, "flipfloP") == string("flipflop"));
 }
-TEST_CASE("Test throw exception-wrong word")///////////////////////////
-{}
+TEST_CASE("Test throw exception-wrong word")
+{
+    string text = "Shelly won the pingpong championship";
+    bool b = false;
+    try
+    {
+        find(text, "flipflop");
+        b = false;
+    }
+    catch (exception ex)
+    {
+        b = true;
+    }
+    CHECK(b);
+}
 
 TEST_CASE("Test replacement of c and k")
 {
@@ -195,8 +235,21 @@ TEST_CASE("Test replacement of lower-case and upper-case")
     CHECK(find(text, "cookIe") == string("cookie"));
     CHECK(find(text, "cookiE") == string("cookie"));
 }
-TEST_CASE("Test throw exception-wrong word")///////////////////////////
-{}
+TEST_CASE("Test throw exception-wrong word")
+{
+    string text = "Dont touch my cookies";
+    bool b = false;
+    try
+    {
+        find(text, "cookie");
+        b = false;
+    }
+    catch (exception ex)
+    {
+        b = true;
+    }
+    CHECK(b);
+}
 
 TEST_CASE("Test replacement of k and q")
 {
@@ -232,8 +285,21 @@ TEST_CASE("Test replacement of lower-case and upper-case")
     CHECK(find(text, "eARTHQUAKE") == string("earthquake"));
     CHECK(find(text, "EARTHQUAKE") == string("earthquake"));
 }
-TEST_CASE("Test throw exception-wrong word")///////////////////////////
-{}
+TEST_CASE("Test throw exception-wrong word")
+{
+    string text = "I am the happiest woman on earth";
+    bool b = false;
+    try
+    {
+        find(text, "earthquake");
+        b = false;
+    }
+    catch (exception ex)
+    {
+        b = true;
+    }
+    CHECK(b);
+}
 
 TEST_CASE("Test replacement of c and q")
 {
@@ -254,8 +320,21 @@ TEST_CASE("Test replacement of lower-case and upper-case")
     CHECK(find(text, "iCq") == string("ICQ"));
     CHECK(find(text, "ICq") == string("ICQ"));
 }
-TEST_CASE("Test throw exception-wrong word")///////////////////////////
-{}
+TEST_CASE("Test throw exception-wrong word")
+{
+    string text = "I seek you";
+    bool b = false;
+    try
+    {
+        find(text, "ICQ");
+        b = false;
+    }
+    catch (exception ex)
+    {
+        b = true;
+    }
+    CHECK(b);
+}
 
 TEST_CASE("Test replacement of s and z")
 {
@@ -283,8 +362,21 @@ TEST_CASE("Test replacement of lower-case and upper-case")
     CHECK(find(text, "ZeUs") == string("zeus"));
     CHECK(find(text, "zEuS") == string("zeus"));
 }
-TEST_CASE("Test throw exception-wrong word")///////////////////////////
-{}
+TEST_CASE("Test throw exception-wrong word")
+{
+    string text = "Zeus is the sky and thunder god in ancient Greek religion";
+    bool b = false;
+    try
+    {
+        find(text, "zues");
+        b = false;
+    }
+    catch (exception ex)
+    {
+        b = true;
+    }
+    CHECK(b);
+}
 
 TEST_CASE("Test replacement of d and t")
 {
@@ -304,6 +396,21 @@ TEST_CASE("Test replacement of lower-case and upper-case")
     CHECK(find(text, "TEd") == string("ted"));
     CHECK(find(text, "tED") == string("ted"));
     CHECK(find(text, "TeD") == string("ted"));
+}
+TEST_CASE("Test throw exception-wrong word")
+{
+    string text = "teddy bear";
+    bool b = false;
+    try
+    {
+        find(text, "ted");
+        b = false;
+    }
+    catch (exception ex)
+    {
+        b = true;
+    }
+    CHECK(b);
 }
 TEST_CASE("Test replacement of o and u")
 {
@@ -328,5 +435,18 @@ TEST_CASE("Test replacement of lower-case and upper-case")
     CHECK(find(text, "ubuntU") == string("ubuntu"));
     CHECK(find(text, "UBUNTU") == string("ubuntu"));
 }
-TEST_CASE("Test throw exception-wrong word")///////////////////////////
-{}
+TEST_CASE("Test throw exception-wrong word")
+{
+    string text = "In fries we trust";
+    bool b = false;
+    try
+    {
+        find(text, "ubuntu");
+        b = false;
+    }
+    catch (exception ex)
+    {
+        b = true;
+    }
+    CHECK(b);
+}
