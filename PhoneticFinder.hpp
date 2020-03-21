@@ -1,7 +1,7 @@
 #include <string>
 using namespace std;
-namespace phonetic{
 
+namespace phonetic{
 
 std::string find(std::string text, std::string word);
 bool friends(char a, char b);
