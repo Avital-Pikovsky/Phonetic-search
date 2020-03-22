@@ -17,14 +17,14 @@ std::string find(std::string text, std::string word)
 
     while ((i < text.length()) && (text.at(i) != ' '))
     {
-
-        if (sameLetter(text.at(i), word.at(j)))
+        if ((j < word.length()) && (sameLetter(text.at(i), word.at(j))))
         {
             answer += text.at(i);
             i++;
             j++;
         }
-        else if (friends(text.at(i), word.at(j)))
+
+        else if ((j < word.length()) && (friends(text.at(i), word.at(j))))
         {
             answer += text.at(i);
             i++;
@@ -35,24 +35,21 @@ std::string find(std::string text, std::string word)
         {
             answer = "";
             j = 0;
-            while ((text.at(i) != ' ') && (i < text.length()))
+            while ((text.at(i) != ' ') && (i < text.length() - 1))
             {
                 i++;
             }
-            printf("hear");
             i++;
         }
     }
     if (j == word.length())
-    {
-        printf("hi");
+
         return answer;
-    }
+
     else
-    {
-        printf("prob");
-        throw runtime_error("Did not find the word: " + word + " in the text");
-    }
+
+        throw runtime_error("Did not find the word: '" + word + "' in the text!");
+
 } // namespace phonetic
 
 /* A function that checks if it is the same letter,
