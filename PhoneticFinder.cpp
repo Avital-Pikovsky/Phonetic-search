@@ -1,3 +1,10 @@
+/*
+ *AUTHOR: Avital Pikovsky
+ *
+ * Date: 2020-03
+ *
+ */
+
 #include "PhoneticFinder.hpp"
 #include <iostream>
 
