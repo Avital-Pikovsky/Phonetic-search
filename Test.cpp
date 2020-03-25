@@ -27,13 +27,13 @@ TEST_CASE("Test replacement of lower-case and upper-case")
     CHECK(find(text, "HAPPY") == string("Happy"));
 
     CHECK(find(text, "HAppy") == string("Happy"));
-    CHECK(find(text, "HAPpy") == string("Happi"));
-    CHECK(find(text, "HAPPy") == string("Happi"));
+    CHECK(find(text, "HAPpy") == string("Happy"));
+    CHECK(find(text, "HAPPy") == string("Happy"));
 
-    CHECK(find(text, "hAPPY") == string("Happi"));
-    CHECK(find(text, "haPPY") == string("Happi"));
-    CHECK(find(text, "hapPY") == string("Happi"));
-    CHECK(find(text, "happY") == string("Happi"));
+    CHECK(find(text, "hAPPY") == string("Happy"));
+    CHECK(find(text, "haPPY") == string("Happy"));
+    CHECK(find(text, "hapPY") == string("Happy"));
+    CHECK(find(text, "happY") == string("Happy"));
 }
 TEST_CASE("Test replacement of p and b")
 {

@@ -20,7 +20,7 @@ The function should return the word as it is written in the text. */
 string find(string text, string word)
 {
 
-    if (word.length() == 0)
+    if (word.length() == 0 || word == " ")
         throw runtime_error("Did not find the word: '" + word + "' in the text!");
 
     int i = 0,
