@@ -17,45 +17,53 @@ namespace phonetic
 even if the word is written in text with misspellings.
 The function should return the word as it is written in the text. */
 
-std::string find(std::string text, std::string word)
+string find(string text, string word)
 {
-    int i = 0, j = 0;
+
+    if (word.length() == 0)
+        throw runtime_error("Did not find the word: '" + word + "' in the text!");
+
+    int i = 0,
+        j = 0;
     string answer = "";
 
-    while ((i < text.length()) && (text.at(i) != ' '))
+    while (i <= text.length())
     {
+        if ((j == word.length()) && ((i == text.length()) || (text.at(i) == ' ')))
+        {
+            return answer;
+        }
+        else if (i == text.length())
+            break;
+
         if ((j < word.length()) && (sameLetter(text.at(i), word.at(j))))
         {
             answer += text.at(i);
             i++;
             j++;
         }
-
         else if ((j < word.length()) && (friends(text.at(i), word.at(j))))
         {
             answer += text.at(i);
             i++;
             j++;
         }
-
         else
         {
             answer = "";
             j = 0;
-            while ((text.at(i) != ' ') && (i < text.length() - 1))
+            while ((i < text.length()) && (text.at(i) != ' '))
             {
                 i++;
             }
-            i++;
+            while ((i < text.length()) && (text.at(i) == ' '))
+            {
+                i++;
+            }
         }
     }
-    if (j == word.length())
 
-        return answer;
-
-    else
-
-        throw runtime_error("Did not find the word: '" + word + "' in the text!");
+    throw runtime_error("Did not find the word: '" + word + "' in the text!");
 
 } // namespace phonetic
 
@@ -101,8 +109,12 @@ bool friends(char a, char b)
     if ((a == 'i' || a == 'y') && (b == 'i' || b == 'y')) //i,y
         flag = true;
 
-    //printf(" %b", flag);
     return flag;
+}
+
+bool BothAreSpaces(char lhs, char rhs)
+{
+    return (lhs == rhs) && (lhs == ' ');
 }
 
 } // namespace phonetic
