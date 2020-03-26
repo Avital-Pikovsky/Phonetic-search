@@ -112,9 +112,4 @@ bool friends(char a, char b)
     return flag;
 }
 
-bool BothAreSpaces(char lhs, char rhs)
-{
-    return (lhs == rhs) && (lhs == ' ');
-}
-
 } // namespace phonetic
